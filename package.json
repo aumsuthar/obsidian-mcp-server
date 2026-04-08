@@ -1,0 +1,27 @@
+{
+  "name": "obsidian-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for Obsidian vaults — read, write, search, daily notes, tags, backlinks, and git sync across devices",
+  "main": "dist/index.js",
+  "bin": {
+    "obsidian-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx --env-file=.env src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["mcp", "obsidian", "claude", "notes", "vault"],
+  "author": "Aum Suthar",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
