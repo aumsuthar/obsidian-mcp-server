@@ -30,8 +30,35 @@ An MCP server that gives Claude direct access to your Obsidian vault — read, w
 ### Prerequisites
 
 - Node.js 18+
-- A git-initialized Obsidian vault (or run `git init` in your vault directory)
-- A GitHub repo for your vault (private recommended)
+- A GitHub account
+- Your Obsidian vault on your local machine
+
+### 0. Set up your vault as a git repo
+
+If your vault isn't already on GitHub, do this once:
+
+```sh
+cd "/path/to/your/Obsidian Vault"
+git init
+git branch -m main
+git add -A
+git commit -m "initial commit"
+```
+
+Then create a repo on GitHub (private recommended) and link it:
+
+```sh
+gh repo create my-obsidian-vault --private --source=. --remote=origin --push
+# or without the GitHub CLI:
+git remote add origin https://github.com/yourusername/my-obsidian-vault.git
+git push -u origin main
+```
+
+On any other device, just clone it:
+
+```sh
+git clone https://github.com/yourusername/my-obsidian-vault.git "/path/to/vault"
+```
 
 ### 1. Clone and install
 
